@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="ie=edge"
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: rgb(116, 79, 141);
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>    
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p> Aqui vai o resultado </p>
+    <p> Aprendendo a usar o <strong>DOM</strong> em Javascript </p>
+    <div> Clique em mim</div>
+    <img src="imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada('lampada-acesa')" onmouseout="mudaLampada('lampada-apagada')" onclick="mudaLampada('lampada-quebrada')"/>
+    <script> 
+        var quebrada = false;
+        function mudaLampada(tipo) {
+            if(!quebrada){
+                document.getElementById("luz").src = "imagens/" + tipo + ".jpg";
+                if(tipo == 'lampada-quebrada'){
+                    quebrada = true
+                }
+            }
+          
+        }
+        
+    </script>
+</body>
+</html>
